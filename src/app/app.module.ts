@@ -13,10 +13,10 @@ import { NavComponent } from './nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
+    NavComponent,
     HomeComponent,
     LogComponent,
-    ProfileComponent,
-    NavComponent
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
