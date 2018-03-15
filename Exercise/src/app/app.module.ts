@@ -19,7 +19,13 @@ import { NavComponent } from './nav/nav.component';
     NavComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      { path: 'home', component: HomeComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'log', component: LogComponent },
+      { path: '', redirectTo: '/home', pathMatch: 'full'}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
