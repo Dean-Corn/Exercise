@@ -35,3 +35,16 @@ module.exports = app
         var me = exercise.ReturnUser(req.params.Name);
         res.send(me);
     })
+    .get('/allusers/:Text', (req, res) =>{
+        var names = exercise.FilterUsers(req.params.Text);
+        res.send(names);
+    })
+    .post('/logs', (req, res) => {
+        try {
+            exercise.AddLog(req.body.Name, req.body.Log);
+            res.send( { success: true } );            
+            } catch (error) {
+            res.status(403).send({ success: false, message: error.message });
+            }
+    })
+    

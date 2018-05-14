@@ -5,6 +5,8 @@ export class User {
 }
 export class Log {
     Date: string;
+    ExerciseType: string;
+    TimeExercised: number;
 
 }
 export class Exercise {

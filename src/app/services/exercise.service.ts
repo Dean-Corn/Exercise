@@ -15,18 +15,14 @@ export class ExerciseService {
 
    }
 
-  login(name: string, password: string) {
-    // tslint:disable-next-line:triple-equals
-    if (password == '123') {
-    // Log the user in
-    this.Me = { Name: name, Pic: '', Bio: ''};
+  login(name: string) {
+    this.Me = { Name: name, Pic: 'https://upload.wikimedia.org/wikipedia/en/d/df/Smiley_face_2.jpg', Bio: ''};
     this._Router.navigate(['/profile']);
     }
-  }
 
 
   oAuthLogin(name: string, token: string, pic: string) {
-    this.Me = { Name: name, Pic: 'https://en.wikipedia.org/wiki/Smiley#/media/File:Emojione_263A.svg', Bio: ''};
+    this.Me = { Name: name, Pic: 'https://upload.wikimedia.org/wikipedia/en/d/df/Smiley_face_2.jpg', Bio: ''};
     this.pic = pic;
     this.token = token;
     this._Router.navigate(['/profile']);

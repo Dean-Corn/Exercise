@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(name: string, password: string) {
-    this._Exercise.login(name, password);
+  login(name: string) {
+    this._Exercise.login(name);
   }
 
   googlelogin() {
