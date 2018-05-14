@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { MessagesService } from '../services/messages.service';
 
 @Component({
   selector: 'app-messages',
@@ -8,23 +9,15 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class MessagesComponent implements OnInit {
 
-  Messages: string[];
-  Visable: boolean;
 
-  constructor() {
-    this.Messages = ['Login is currently disabled.'];
-    this.Visable = true;
-   }
+  constructor( public Messages: MessagesService ) {
+  }
 
   ngOnInit() {
   }
 
-  showAlert() {
-    this.Visable = true;
-  }
-
-  hideAlert() {
-    this.Visable = false;
+  delete(i: number) {
+    this.Messages.Messages.splice(i, 1);
   }
 
 }
