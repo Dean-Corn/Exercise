@@ -47,4 +47,8 @@ module.exports = app
             res.status(403).send({ success: false, message: error.message });
             }
     })
+    .get('/logs/:Name', (req, res) => {
+        var logs = exercise.GetLogs(req.params.Name);
+        res.send(logs);
+    })
     

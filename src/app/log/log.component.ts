@@ -21,17 +21,33 @@ export class LogComponent implements OnInit {
     private _Messages: MessagesService,
     private _Exercise: ExerciseService,
     private _Router: Router) {
+      this.Me = _Exercise.Me;
+      setInterval(() => this.refresh(), 1000);
   }
 
   ngOnInit() {
   }
 
   addLog(date: string, etype: string, time: number) {
-    this._Messages.Messages.push({ Text: 'Welcome ' + name , Type: 'success'});
-    this.http.post(this._api + '/logs', { Name: this.Me.Name, Log: {Date: date, ExerciseType: etype, ExerciseTime: time}})
+    this.http.post(this._api + '/logs', { Name: this.Me.Name, Log: {Date: date, ExerciseType: etype, TimeExercised: time}})
     .subscribe(data => {
+      this._Messages.Messages.push({ Text: 'Log submitted.' , Type: 'success'});
     }, err => {
     console.log(err);
     });
+  }
+
+  getLogs(name: string) {
+    this.http.get(this._api + '/logs/' + name).subscribe(data => {
+      this.Logs = data.json();
+    });
+  }
+
+  refresh() {
+    if (!this.Me.Name) {
+
+    } else {
+      this.getLogs(this.Me.Name);
+    }
   }
 }

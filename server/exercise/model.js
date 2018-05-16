@@ -21,15 +21,21 @@ function Exercise() {
         this.Users[this.Users.findIndex(x => x.Name == name)].Pic = pic;
     }
 
-    /*
+    
     this.AddLog = (name, log) => {
-        this.Logs.Push({Name: name, Log: log})
+        this.Logs.push({Name: name, Log: log})
     }
     
     this.GetLogs = (name) => {
-        
+        var logs = [];
+        for(i in this.Logs){
+            if(this.Logs[i].Name==name){
+                logs.push(this.Logs[i].Log);
+            }
+        }
+        return logs;
     }
-    */
+    
 
     this.FilterUsers = (text) => {
         var users = this.Users.filter(x => x.Name.toLowerCase().indexOf(text.toLowerCase()) > -1).slice(0, 10);
