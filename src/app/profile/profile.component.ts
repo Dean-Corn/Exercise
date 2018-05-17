@@ -29,6 +29,7 @@ export class ProfileComponent implements OnInit {
         _Router.navigate(['/login']);
       }
       this.login(this.Me.Name);
+      this._Messages.Messages.push({ Text: 'Welcome ' + name , Type: 'success'});
       setInterval(() => this.refresh(), 1000);
   }
 
@@ -44,7 +45,6 @@ export class ProfileComponent implements OnInit {
   }
 
   login(name: string) {
-    this._Messages.Messages.push({ Text: 'Welcome ' + name , Type: 'success'});
     this.http.post(this._api + '/exerciselogin', { Name: name })
     .subscribe(data => {
     }, err => {

@@ -45,7 +45,7 @@ import { SearchComponent } from './search/search.component';
       { path: 'profile', component: ProfileComponent },
       { path: 'log', component: LogComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'user', component: UserComponent },
+      { path: 'user/:userName', component: UserComponent },
       { path: 'manage', component: ManageComponent },
       { path: 'search', component: SearchComponent},
       { path: '', redirectTo: '/home', pathMatch: 'full'}
