@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
         _Router.navigate(['/login']);
       }
       this.login(this.Me.Name);
-      this._Messages.Messages.push({ Text: 'Welcome ' + name , Type: 'success'});
+      this._Messages.Messages.push({ Text: 'Welcome ' + this.Me.Name , Type: 'success'});
       setInterval(() => this.refresh(), 1000);
   }
 
