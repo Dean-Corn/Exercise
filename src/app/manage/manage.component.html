@@ -1,16 +1,18 @@
 <div class="row justify-content-center">
-  <div class="col-md-4">
+  <div class="col-md-5">
     <div class="card">
-      <div class="card-header">Bio</div>
+      <div class="card-header">Manage Profile</div>
       <div class="card-body">
-      <input #Bio placeholder="Enter a new Bio here." />                       
-      <button (click)="setBio(Bio.value)" >Update</button>
-    </div>
-    <div class="card">
-      <div class="card-header">Picture</div>
-      <div class="card-body">
-      <input #Picture placeholder="Enter a new picture url here." />                       
-      <button (click)="setPic(Picture.value)" >Update</button>
+        <div class="row justify-content-center">
+          <input size="40" #Bio placeholder="Enter a new Bio here." />
+          <button (click)="setBio(Bio.value)" >Update</button>
+        </div>
+        <div class="row justify-content-center"><br></div>
+        <div class="row justify-content-center">
+          <input size="40" #Picture placeholder="Enter a new picture url here." />                    
+          <button (click)="setPic(Picture.value)" >Update</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
